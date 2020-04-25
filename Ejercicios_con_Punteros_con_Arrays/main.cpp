@@ -74,26 +74,22 @@ void ejercicio_2(int *Arr, int Tam)
 
 }
 
-void ejercicio_3(int *Input_1, int *Input_2, int *Ouput, int Tam)
+void ejercicio_3(int *Input_1, int *Input_2, int *Output, int Tam)
 {
-    int i=0;
-    while(i<Tam)
+    for(int i=0; i<Tam*2; i++)
     {
-        for(int j=0; j<Tam; j++)
+        if(*Input_1<*Input_2)
         {
-            if(*Input_1<=*Input_2)
-            {
-                *Ouput=*Input_1;
-            }
-            else
-            {
-                *Ouput=*Input_2;
-            }
+            *Output=*Input_1;
+            Output++;
             Input_1++;
         }
-        Input_1-=Tam;
-        Input_2++;
-        i++;
+        else
+        {
+            *Output=*Input_2;
+            Output++;
+            Input_2++;
+        }
     }
 }
 
